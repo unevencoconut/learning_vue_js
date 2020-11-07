@@ -1,0 +1,28 @@
+Dev Notes:
+    Declarative Rendering, reacts directly with DOM.
+    VUE calls this "Reactive". So, makes sense.
+
+    V-Bind ( Directive )
+    Prefixed with a v- to indicate they are attributes provided by VUE.
+    They apply reactive behavior.
+
+    V-For ( Directive )
+    Kinda like ... a For Loop? Seems like it.
+
+    V-On ( Directive )
+    Attach Event Listeners that invoke Methods on our Vue Instances.
+
+    PROPS
+    Yep, seems like Reacts Props. But lets give it a GO
+        PROPS - only reactive if they existed when the instance was created.
+        Therefor, if you know you'll need a Property Later, you'll need to start
+        it out Empty or Non-Existent for the Initial Value.
+
+    View Components = View Instances
+    Says the Documentation. Okie doke.
+    ( Except for a few Root Specific Options )
+
+
+THE BIG DEFINING STUFF
+
+    -- Vue Instances have Properties and Methods that are prefixed with $

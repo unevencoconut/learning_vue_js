@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="author" content="name">
+        <meta name="description" content="description here">
+        <meta name="keywords" content="keywords,here">
+        <link rel="stylesheet" href="stylesheet.css" type="text/css">
+
+        <title>title</title>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- production version, optimized for size and speed -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+    </head>
+    <body>
+
+    
+    <div id="app">
+        <h2>Hello View Dynamic Message</h2>
+        <div>
+            {{ message }}
+        </div>
+    </div>
+
+    <div id="app-2">
+        <h2>Using a V-Bind</h2>
+        <span v-bind:title="message">
+            Hover your Mouse over me for a few seconds to dynamically bound title!
+        </span>
+    </div>
+
+    <div id="app-3">
+        <h2>Toggle Presence of an Element</h2>
+        <h3>It's there ... its just toggled</h3>
+        <span v-if="seen">Now you see me!</span>
+    </div>
+
+    <div id="app-4">
+        <h2>The "V-FOR" Directive</h2>
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+
+    <div id="app-5">
+        <h2>Handling User Input</h2>
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <div id="app-6">
+        <h2>The "V-Modal" Diective</h2>
+        <p>
+            {{ message }}
+        </p>
+        <input v-model="message">
+    </div>
+
+    <script>
+        // View Instance
+        let app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        });
+
+        // Dynamic Load
+        let app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: 'You loaded this page on ' + new Date().toLocaleString()
+            }
+        })
+
+        // Toggle Visibility
+        let app3 = new Vue({
+            el: '#app-3',
+            data: {
+                seen: false
+            }
+        });
+
+        let app4 = new Vue({
+            el: '#app-4',
+            data: {
+                todos: [
+                    { text: 'Learn Javascript' },
+                    { text: 'Learn Vue' },
+                    { text: 'Build Something Awesome' }
+                ]
+            }
+        });
+
+        let app5 = new Vue({
+            el: '#app-5',
+            data: {
+                message: 'Hello Vue.js!'
+            },
+            methods: {
+                reverseMessage: function(){
+                    this.message = this.message.split('').reverse().join('')
+                }
+            }
+        });
+
+var app6 = new Vue({
+  el: '#app-6',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+    </script>
+
+    </body>
+</html>
