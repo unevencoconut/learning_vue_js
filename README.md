@@ -1,6 +1,8 @@
 # Just Practicing some VUE JS. ( Don't mind me )
-
 ## Just Some Random Notes
+
+# Ok. I ran through enough of it, I get the gist.
+
 ---
 At the time of this writing:
     I'm testing out View JS. Right now, I have a background in Vanilla JS, React, and jQuery.
